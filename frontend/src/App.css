@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: radial-gradient(circle, #0411c8, #010a72);
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,9 +24,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -36,3 +33,64 @@
     transform: rotate(360deg);
   }
 }
+
+.map-container {
+  position: fixed;
+  width: 100vw; /* Set the width as desired*/
+  height: calc(100vh - 100px); /*Set the height as desired*/
+  overflow: hidden;
+  top: 100px;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  z-index: 1;
+}
+
+.centerLocation-Button {
+  position: relative;
+  background-color: #0411c8; /* Button color */
+  color: rgb(254, 254, 254); /* Icon color */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Make it circular */
+  width: 50px; /* Set the width of the button */
+  height: 50px; /* Set the height of the button */
+  display: flex; /* Use flex to center the icon */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  position: absolute; /* Allow positioning */
+  bottom: 20px; /* Position from the top */
+  left: 20px; /* Position from the left */
+  box-shadow: 0 3px 11px rgba(0, 0, 0, 0.2); /* Add shadow */
+  transition: background-color 0.3s; /* Smooth color transition */
+  z-index: 1000; /* High z-index to ensure button is on top */
+}
+
+.centerLocation-Button:hover {
+  background-color: #2d43bd; /* Change color on hover */
+}
+
+
+.filter-button{
+  position: absolute;
+  background-color: #0411c8; /* Button color */
+  color: rgb(254, 254, 254); /* Icon color */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Make it circular */
+  width: 50px; /* Set the width of the button */
+  height: 50px; /* Set the height of the button */
+  display: flex; /* Use flex to center the icon */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  position: absolute; /* Allow positioning */
+  top: 60px; /* Position from the top */
+  left: 20px; /* Position from the left */
+  box-shadow: 0 3px 11px #00000033; /* Add shadow */
+  transition: background-color 0.3s; /* Smooth color transition */
+  z-index: 1000; /* High z-index to ensure button is on top */
+}
+
+.filter-button:hover {
+  background-color: #2d43bd; /* Change color on hover */
+}
+

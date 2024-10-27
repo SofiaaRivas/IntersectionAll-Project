@@ -6,7 +6,9 @@ import GoogleMapComponent from './MapAPIComponent';
 function App() {
   return (
     <div>
-      <h1>IntersectionAll - Campus Accessibility Map</h1>
+      <header className='App-header'>
+        <h1>IntersectionAll</h1>
+      </header>
       <GoogleMapComponent />
     </div>
   );
