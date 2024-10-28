@@ -1,7 +1,7 @@
 import './App.css';
 
 import React from 'react';
-import GoogleMapComponent from './MapAPIComponent';
+import GoogleMapComponent from './components/GoogleMapComponent';
 
 function App() {
   return (
