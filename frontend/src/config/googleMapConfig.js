@@ -8,4 +8,5 @@ export const containerStyle = {
     lat: 41.504341,
     lng: -81.608383,
   };
-  
+
+export const defaultZoom = 17;

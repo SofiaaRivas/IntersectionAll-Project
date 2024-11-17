@@ -10,5 +10,3 @@ jest.mock('@react-google-maps/api', () => ({
   GoogleMap: (props) => <div data-testid="google-map" {...props} />,
   LoadScript: ({ children }) => <div>{children}</div>,
 }));
-
-
