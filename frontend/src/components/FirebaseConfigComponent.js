@@ -1,4 +1,4 @@
-// firebaseConfig.js
+// firebaseConfigComponent.js
 
 // Code imported from Firebase website
 // Import the functions you need from the SDKs you need
