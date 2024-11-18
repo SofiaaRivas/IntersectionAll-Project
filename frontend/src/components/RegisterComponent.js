@@ -18,7 +18,7 @@ const Register = () => {
       const firebaseUid = userCredential.user.uid;
 
       // Save the user in the database
-      const response = await fetch("/api/users", {
+      const response = await fetch("https://apex.oracle.com/pls/apex/intersectionall/users/Users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
