@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import UserLocationButton from './UserLocationButton';
 import FilterButton from './MarkerFilterButton';
-import useGeolocation from '../hooks/UseGeolocation';
-import useMarkers from '../hooks/UseMarkers';
+import useGeolocation from '../hooks/useGeolocation';
+import useMarkers from '../hooks/useMarkers';
 import { containerStyle, defaultCenter } from '../config/googleMapConfig';
 
 const GoogleMapComponent = () => { 
