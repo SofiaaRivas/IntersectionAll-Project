@@ -9,7 +9,7 @@ const Login = ({ onLoginSuccess }) => {
   // Function to fetch the user's role from the backend
   const fetchUserRole = async (firebaseUid) => {
     try {
-      const baseUrl = "https://apex.oracle.com/pls/apex/intersectionall/users"; // Replace with your API base URL
+      const baseUrl = "https://apex.oracle.com/pls/apex/intersectionall/users/Users"; // Replace with your API base URL
       const response = await fetch(`${baseUrl}?firebase_uid=${firebaseUid}`);
       const userData = await response.json();
 
