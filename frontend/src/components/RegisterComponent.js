@@ -1,13 +1,13 @@
 // Implement Firebase authenticated user creation/registration functionality 
+// Admin users must be manually created by devs to ensure restricted access
 
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebaseConfigComponent"; // Check that path is correct
+import { auth } from "../firebaseConfig";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("GeneralUser");
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -16,11 +16,11 @@ const Register = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const firebaseUid = userCredential.user.uid;
 
-      // Save the user in the database
+      // Save the user as GeneralUser in the database
       await fetch("/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firebase_uid: firebaseUid, email, role }),
+        body: JSON.stringify({ firebase_uid: firebaseUid, email, role: "GeneralUser" }),
       });
 
       alert("Registration successful!");
@@ -47,18 +47,10 @@ const Register = () => {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      <label htmlFor="role">Select Role:</label>
-      <select
-        id="role"
-        value={role}
-        onChange={(e) => setRole(e.target.value)}
-      >
-        <option value="GeneralUser">General User</option>
-        <option value="AdminUser">Admin User</option>
-      </select>
       <button type="submit">Register</button>
     </form>
   );
 };
 
 export default Register;
+
