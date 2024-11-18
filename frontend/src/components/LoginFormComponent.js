@@ -2,22 +2,21 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 
-const Login = () => {
+const Login = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // Function to fetch the user's role from the backend
   const fetchUserRole = async (firebaseUid) => {
     try {
-      const baseUrl = "https://apex.oracle.com/pls/apex/intersectionall/users/Users"; // Replace with your API base URL
-      const response = await fetch(`${baseUrl}/users?firebase_uid=${firebaseUid}`);
+      const baseUrl = "https://apex.oracle.com/pls/apex/intersectionall/users"; // Replace with your API base URL
+      const response = await fetch(`${baseUrl}?firebase_uid=${firebaseUid}`);
       const userData = await response.json();
 
       if (userData.status === "error") {
         throw new Error(userData.message);
       }
 
-      // Assuming the API returns a JSON object array filtered by `firebase_uid`
       const user = userData[0]; // Extract the first user from the array
       return user.role; // Returns "AdminUser" or "GeneralUser"
     } catch (error) {
@@ -44,12 +43,8 @@ const Login = () => {
 
       alert(`Login successful! Role: ${role}`);
 
-      // Redirect based on role
-      if (role === "AdminUser") {
-        window.location.href = "/admin-dashboard"; // Future TODO: Confirm path
-      } else {
-        window.location.href = "/user-dashboard"; // Future TODO: Confirm path
-      }
+      // Pass user info back to the parent
+      onLoginSuccess({ firebaseUid, role });
     } catch (error) {
       console.error("Login error:", error);
       alert(error.message);
