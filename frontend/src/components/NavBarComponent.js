@@ -18,9 +18,7 @@ const Navbar = ({ user }) => {
           {user && user.role === 'AdminUser' && (
             <li><Link to="/admin-dashboard">Verifications</Link></li>
           )}
-          {user && user.role === 'GeneralUser' && (
-            <li><Link to="/submission-history">Submissions History</Link></li>
-          )}
+          <li><Link to="/submission-history">Submissions History</Link></li>
           {user ? (
             <li><Link to="/logout">Logout</Link></li>
           ) : (
@@ -29,7 +27,7 @@ const Navbar = ({ user }) => {
         </ul>
 
         {/* Button Section */}
-        {user && (
+        {user && user.role === 'GeneralUser' && (
           <button className="contribute-button">
             <Link to="/contribute">Contribute a Marker!</Link> {/* links to nothing, yet*/}
           </button>
