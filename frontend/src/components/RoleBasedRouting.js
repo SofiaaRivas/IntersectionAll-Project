@@ -1,11 +1,13 @@
 // routing
-// move to ROUTING FOLDER
+// The marker submissions pending verification dashboard, the 
+// user's personal submission history, and the functionality to 
+// give feedback on markers, hasn't been implemented
 
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import AdminDashboard from "../components/AdminDashboard";
-import SubmissionHistory from "../components/SubmissionHistory";
-import VoteOnMarkers from "../components/VoteOnMarkers";
+import AdminDashboard from "   ";
+import SubmissionHistory from " ";
+import VoteOnMarkers from "  ";
 
 const RoleBasedRouter = ({ user }) => {
   return (
