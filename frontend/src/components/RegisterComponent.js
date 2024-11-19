@@ -3,12 +3,14 @@
 
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 import { auth } from "../firebaseConfig"; // Ensure correct path
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize navigate hook
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -32,6 +34,9 @@ const Register = () => {
 
       if (response.ok) {
         alert("Registration successful!");
+
+        // Redirect to the home page
+        navigate("/");
       } else {
         alert(`Error: ${result.message}`);
       }
