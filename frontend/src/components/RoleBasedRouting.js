@@ -6,8 +6,8 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import VerificationDashboard from "./VerificationDashboardComponent";
-import SubmissionHistory from "./SubmissionHistory";
-import Feedback from "./Feedback";
+import SubmissionHistory from "./SubmissionHistoryComponent";
+import MarkerFeedback from "./MarkerFeedbackComponent";
 
 const RoleBasedRouter = ({ user }) => {
   return (
@@ -21,7 +21,7 @@ const RoleBasedRouter = ({ user }) => {
       {user.role === "GeneralUser" && (
         <>
           <Route path="/submission-history" element={<SubmissionHistory />} />
-          <Route path="/feedback" element={<feedback />} />
+          <Route path="/marker-feedback" element={<MarkerFeedback />} />
         </>
       )}
 
