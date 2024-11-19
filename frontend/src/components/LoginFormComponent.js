@@ -1,29 +1,11 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./firebaseConfig";
+import { auth } from "../config/FirebaseConfigComponent";
+import { fetchUserRole } from "../utils";
 
 const Login = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  // Function to fetch the user's role from the backend
-  const fetchUserRole = async (firebaseUid) => {
-    try {
-      const baseUrl = "https://apex.oracle.com/pls/apex/intersectionall/users/Users"; // Replace with your API base URL
-      const response = await fetch(`${baseUrl}?firebase_uid=${firebaseUid}`);
-      const userData = await response.json();
-
-      if (userData.status === "error") {
-        throw new Error(userData.message);
-      }
-
-      const user = userData[0]; // Extract the first user from the array
-      return user.role; // Returns "AdminUser" or "GeneralUser"
-    } catch (error) {
-      console.error("Error fetching user role:", error);
-      return null;
-    }
-  };
 
   // Handle the login form submission
   const handleLogin = async (e) => {
