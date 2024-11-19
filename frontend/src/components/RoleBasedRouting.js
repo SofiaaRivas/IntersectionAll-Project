@@ -5,23 +5,23 @@
 
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import AdminDashboard from "   ";
-import SubmissionHistory from " ";
-import VoteOnMarkers from "  ";
+import VerificationDashboard from "./VerificationDashboardComponent";
+import SubmissionHistory from "./SubmissionHistory";
+import Feedback from "./Feedback";
 
 const RoleBasedRouter = ({ user }) => {
   return (
     <Routes>
       {/* Admin-specific routes */}
       {user.role === "AdminUser" && (
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/verification-dashboard" element={<VerificationDashboard />} />
       )}
 
       {/* General user-specific routes */}
       {user.role === "GeneralUser" && (
         <>
           <Route path="/submission-history" element={<SubmissionHistory />} />
-          <Route path="/vote-on-markers" element={<VoteOnMarkers />} />
+          <Route path="/feedback" element={<feedback />} />
         </>
       )}
 
