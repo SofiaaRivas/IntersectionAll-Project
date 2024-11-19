@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2"; // For the pie chart
-import "./SubmissionHistory.css";
+// import "./SubmissionHistory.css";
 
 const SubmissionHistory = ({ user }) => {
   const [submissions, setSubmissions] = useState([]);
