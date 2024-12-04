@@ -1,0 +1,87 @@
+/* MarkerSubmissionForm.css */
+.marker-form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 450px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .modal h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  form label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  form input[type="number"],
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  form textarea:focus,
+  form input[type="number"]:focus,
+  form select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  form input[type="range"] {
+    width: 100%;
+  }
+  
+  form button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  form button[type="button"] {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  form button[type="button"]:hover {
+    background-color: #d32f2f;
+  }
+  
