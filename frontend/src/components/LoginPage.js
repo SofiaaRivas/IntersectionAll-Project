@@ -1,6 +1,6 @@
 import React from "react";
 import "./LoginPage.css"; // Import your custom CSS
-import Login from "./LoginFormComponent"; 
+import Login from "../LoginFormComponent"; 
 
 const LoginPage = () => {
   return (

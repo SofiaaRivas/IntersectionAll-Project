@@ -1,5 +1,5 @@
 import React from "react";
-import GoogleMapComponent from "../GoogleMapComponent"; // Your map component
+import GoogleMapComponent from "./GoogleMapComponent"; 
 
 const Home = ({ user }) => {
   return (

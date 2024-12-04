@@ -3,6 +3,7 @@
 // Code imported from Firebase website
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,3 +23,9 @@ const firebaseConfigComponent = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfigComponent);
 const analytics = getAnalytics(app);
+
+// Initialize Firebase Authentication
+const auth = getAuth(app); // This line initializes Firebase Auth
+
+export { auth }; // Export the auth object for use in other components
+export default app;

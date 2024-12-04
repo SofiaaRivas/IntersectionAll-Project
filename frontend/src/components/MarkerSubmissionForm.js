@@ -46,14 +46,12 @@ const MarkerSubmissionForm = ({ location, onClose, onSubmit }) => {
 
     console.log('Form submitted:', markerData);
 
-    try {
-      const response = await fetch('https://apex.oracle.com/pls/apex/intersectionall/markers/Markers', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(markerData),
-      });
+      try {
+        const response = await fetch('http://localhost:5000/markers', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(markerData),
+        });
 
       if (response.ok) {
         const result = await response.json();
