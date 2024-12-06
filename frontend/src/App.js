@@ -80,15 +80,16 @@
 
 
 import './App.css';
-
+//import navBar from './components/navBar';
 import React from 'react';
 import GoogleMapComponent from './components/GoogleMapComponent';
 
 function App() {
   return (
     <div>
+      {/* <navBar /> */}
       <header className='App-header'>
-        <h1>IntersectionAll</h1>
+        <h1>intersectionAll</h1>
       </header>
       <GoogleMapComponent />
     </div>

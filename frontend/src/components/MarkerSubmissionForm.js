@@ -11,27 +11,33 @@ const MarkerSubmissionForm = ({ location, onClose, onSubmit }) => {
 
   // Mapping for marker types and categories as specified in database tables
   const markerMappings = {
-    Ramp: { marker_type_id: 29, marker_category: 'Outdoor' },
-    'Automatic Door': { marker_type_id: 30, marker_category: 'Indoor' },
-    Walkway: { marker_type_id: 31, marker_category: 'Outdoor' },
-    Terrain: { marker_type_id: 32, marker_category: 'Outdoor' },
+    Ramp: { marker_type_id: 29, marker_type: 'Ramp', marker_category: 'Outdoor' },
+    'Automatic Door': { marker_type_id: 30, marker_type: 'Automatic Door', marker_category: 'Indoor' },
+    'Walkway': { marker_type_id: 31, marker_type: 'Walkway', marker_category: 'Outdoor' },
+    Terrain: { marker_type_id: 32, marker_type: 'Terrain', marker_category: 'Outdoor' },
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent page reload
-
     if (!markerType || !width || !incline || !surface) {
       alert('Please fill out all required fields.');
       return;
     }
 
     // Retrieve the marker type ID and category from the mappings
-    const { marker_type_id, marker_category } = markerMappings[markerType];
+    const { marker_type_id, marker_type, marker_category } = markerMappings[markerType];
 
     const markerData = {
-      user_id: '12345', // Temporary userId, since user authentication is not implemented yet 
       marker_type_id: marker_type_id, // The ID corresponding to the marker type (e.g., Ramp)
+      marker_type: marker_type,
       marker_category: marker_category, // The description entered by the user
+      latitude: location.lat,
+      longitude: location.lng,
+      width: width,
+      incline: incline,
+      surface: surface,
+      reliability: reliability,
+      details: details,
     };
     //   markerType,
     //   markerCategory,
@@ -40,8 +46,7 @@ const MarkerSubmissionForm = ({ location, onClose, onSubmit }) => {
     //   surface,
     //   reliability,
     //   details,
-    //   latitude: location.lat,
-    //   longitude: location.lng,
+
     // };
 
     console.log('Form submitted:', markerData);
@@ -73,7 +78,7 @@ const MarkerSubmissionForm = ({ location, onClose, onSubmit }) => {
         <form onSubmit={handleSubmit}>
           <div>
             <p>Select Marker Type:</p>
-            {["Ramp", "Walkways", "Automatic Door", "Terrain"].map((type) => (
+            {["Ramp", "Walkway", "Automatic Door", "Terrain"].map((type) => (
               <label key={type}>
               <input
                 type="radio"

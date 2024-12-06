@@ -10,23 +10,16 @@ const MarkerSubmissionPopup = ({ isOpen, onClose, location, onSubmit }) => {
     setShowForm(true); // Show the form when the user clicks 'Yes'
   };
 
-  const handleMarkerSubmit = (markerData) => {
-    // Add the marker to the map
-    onSubmit(markerData);
-  }
-
   return (
     <div className="modal-popup">
       <div className="modal">
         {showForm ? (
-          <MarkerSubmissionForm location={location} onClose={onClose} onSubmit={handleMarkerSubmit} />
+          <MarkerSubmissionForm location={location} onClose={onClose} onSubmit={onSubmit} />
         ) : (
           <>
             <p>Do you want to create a marker here?</p>
-            <p>Latitude: {location.lat}</p>
-            <p>Longitude: {location.lng}</p>
-            <button onClick={handleYesClick}>Yes</button>
             <button onClick={onClose}>Cancel</button>
+            <button onClick={handleYesClick}>Yes</button>
           </>
         )}
       </div>
