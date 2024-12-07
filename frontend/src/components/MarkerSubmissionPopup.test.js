@@ -11,7 +11,7 @@ test('popup appears when user clicks "Yes" to create marker', () => {
   // user should see a prompt to create a marker
   expect(screen.getByText(/Do you want to create a marker here?/i)).toBeInTheDocument();
 
-  // Click 'Yes' to show the form
+  // Click yes to show the form
   fireEvent.click(screen.getByText(/Yes/i));
 
   // Check if the form is now displayed

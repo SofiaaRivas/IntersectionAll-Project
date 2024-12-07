@@ -11,7 +11,7 @@ const SubmissionHistory = ({ user }) => {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const response = await fetch(`/api/markers/history?user_id=${user.userId}`); // FIX
+        const response = await fetch(`/api/markers/history?user_id=${user.userId}`); 
         const data = await response.json();
         setSubmissions(data);
       } catch (error) {

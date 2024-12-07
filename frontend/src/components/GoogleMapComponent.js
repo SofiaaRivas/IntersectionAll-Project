@@ -75,8 +75,8 @@ const GoogleMapComponent = () => {
         <FilterButton onFilterSelect={applyFilter}/>
         <LoadScript googleMapsApiKey="AIzaSyC0qEtwJQpgLI1Z6YP0jGTPPjgdqsdAjCw">
           <GoogleMap mapContainerStyle={containerStyle} center={mapCenter} zoom={defaultZoom}
-            onLoad={(map) => (mapRef.current = map)} // Save the map instance to the ref
-            onClick={handleMapClick} // Left-click for laptop
+            onLoad={(map) => (mapRef.current = map)} 
+            onClick={handleMapClick}
           >
             {userLocation && <Marker position={userLocation} />}
             {filteredMarkers.map((marker, index) => (
@@ -95,7 +95,6 @@ const GoogleMapComponent = () => {
                 onSubmit={addMarker} 
               />
             )}
-            {/* Display Info Box */}
             {selectedMarker && <MarkerInfoBox
               selectedMarker={selectedMarker} 
               closeInfoBox={closeInfoBox}

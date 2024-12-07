@@ -1,0 +1,80 @@
+/* menu.css */
+header {
+    position: relative; 
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1; 
+  }
+  
+
+  nav.menu-overlay {
+    position: relative;  
+    top: 0px; 
+    left: 0;
+    width: 100%;
+    background-color: #dfe8ff;  
+    z-index: 20; 
+  }
+  
+  nav.menu-overlay ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav.menu-overlay ul li {
+    margin-left: 20px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+  }
+  
+  nav.menu-overlay ul li:hover {
+    background-color: #f1f6ff;
+    border-radius: 5px;
+    padding: 1px 5px;
+  }
+  
+  .menu-content p {
+    font-size: 1.1em;
+  }
+  
+
+  .password-prompt {
+    background-color: rgba(23, 57, 145, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .password-prompt input {
+    margin: 10px 0;
+    right: 5px;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .password-prompt button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #3d7eff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .password-prompt button:hover {
+    background-color: #94b7ff;
+  }
+  

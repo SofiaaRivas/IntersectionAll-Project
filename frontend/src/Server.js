@@ -6,7 +6,6 @@ const cors = require('cors');
 const app = express();
 const PORT = 5000;
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -18,7 +17,6 @@ app.use(bodyParser.json());
 
 // Define Marker Schema
 const markerSchema = new mongoose.Schema({
-  //user_id: String,
   marker_type_id: Number,
   marker_type: String,
   marker_category: String,
@@ -32,6 +30,15 @@ const markerSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const Marker = mongoose.model('Marker', markerSchema);
+
+
+// Define Feedback Schema
+const feedbackSchema = new mongoose.Schema({
+  message: String,
+}, { timestamps: true });
+
+const Feedback = mongoose.model('Feedback', feedbackSchema);
+
 
 // Routes
 app.get('/', (req, res) => {
@@ -57,6 +64,31 @@ app.get('/markers', async (req, res) => {
   }
 });
 
+
+// Feedback Routes
+app.post('/feedback', async (req, res) => {
+  try {
+    const feedback = new Feedback(req.body);
+    const savedFeedback = await feedback.save();
+    res.status(201).json({ message: 'Feedback submitted successfully', feedback: savedFeedback });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to submit feedback' });
+  }
+});
+
+app.get('/feedback', async (req, res) => {
+  try {
+    const feedbackList = await Feedback.find();
+    res.json(feedbackList);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve feedback' });
+  }
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
+

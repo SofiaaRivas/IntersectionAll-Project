@@ -1,0 +1,21 @@
+To get the intersectionAll site up and running you will have to follow the following instructions: 
+    1. On the terminal navigate to frontend folder and then run 'npm start'. 
+    2. In a separate terminal navigate to frontend/src folder, run 'node Server.js' to start the database backend.
+
+Yay! Thank you for using intersectionAll! Now that the site is running you can navigate through all the features we have in store which are detailed below: 
+
+To center map on current location click on the center map button on the bottom left hand corner, you will beprompted to allow acces to current location. If "allow" is selected, map will be centered on current location and a map will be placed in that location. 
+
+To submit a marker, tap or click on the map. You will be prompted with a form to fill out and submit. Once submitted, a marker will be added to the map at the slected location.
+
+To view a different view of the map, you can toggle the satellite and map views. 
+
+To filter available markers, click on the downward arrow in the dark blue circle on the left of the map.
+
+To view accessibility information of a marker, tap or click on markers on the map.
+
+To provide general feedback on marker helpfulness, navigate to "Feedback Form" below the intersectionAll header.
+
+To access the administrative side, navigate to "Admin side" in the navigation bar. You will need to input the password "cwruAccessibility" to enter. However, the UI for the admin side has not been fully implemented in this version and is to be implemented in a future version of intersectionAll. Currently the admin side only provides a view of the feedback that has been submitted. 
+
+To navigate back to the general user side click on home tab, sometimes you have to click on it twice for the map to render properly again.

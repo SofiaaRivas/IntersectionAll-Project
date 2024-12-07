@@ -5,7 +5,7 @@ const MarkerInfoBox = ({ selectedMarker, closeInfoBox }) => {
   return (
     <div style={{
         position: 'absolute',
-        top: '120px',  // Fixed position at the top of the screen for now
+        top: '120px',  
         left: '500px',
         backgroundColor: 'white',
         padding: '10px',

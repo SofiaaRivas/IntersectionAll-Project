@@ -28,7 +28,7 @@ const MarkerSubmissionForm = ({ location, onClose, onSubmit }) => {
     const { marker_type_id, marker_type, marker_category } = markerMappings[markerType];
 
     const markerData = {
-      marker_type_id: marker_type_id, // The ID corresponding to the marker type (e.g., Ramp)
+      marker_type_id: marker_type_id, // The ID corresponding to the marker type 
       marker_type: marker_type,
       marker_category: marker_category, // The description entered by the user
       latitude: location.lat,
@@ -39,15 +39,6 @@ const MarkerSubmissionForm = ({ location, onClose, onSubmit }) => {
       reliability: reliability,
       details: details,
     };
-    //   markerType,
-    //   markerCategory,
-    //   width,
-    //   incline,
-    //   surface,
-    //   reliability,
-    //   details,
-
-    // };
 
     console.log('Form submitted:', markerData);
 

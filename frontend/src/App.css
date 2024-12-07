@@ -1,6 +1,6 @@
 .App-header {
   background: radial-gradient(circle, #0411c8, #010a72);
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,22 +71,22 @@
 
 .filter-button{
   position: absolute;
-  background-color: #0411c8; /* Button color */
-  color: rgb(254, 254, 254); /* Icon color */
-  border: none; /* Remove default border */
-  border-radius: 50%; /* Make it circular */
-  width: 50px; /* Set the width of the button */
-  height: 50px; /* Set the height of the button */
-  display: flex; /* Use flex to center the icon */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  position: absolute; /* Allow positioning */
-  top: 150px; /* Position from the top */
-  left: 20px; /* Position from the left */
-  box-shadow: 0 3px 11px #00000033; /* Add shadow */
-  transition: background-color 0.3s; /* Smooth color transition */
-  z-index: 1000; /* High z-index to ensure button is on top */
+  background-color: #0411c8;
+  color: rgb(254, 254, 254); 
+  border: none; 
+  border-radius: 50%; 
+  width: 50px; 
+  height: 50px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  cursor: pointer; 
+  position: absolute; 
+  top: 200px;
+  left: 20px; 
+  box-shadow: 0 3px 11px #00000033; 
+  transition: background-color 0.3s; 
+  z-index: 10; 
 }
 
 .filter-menu {
